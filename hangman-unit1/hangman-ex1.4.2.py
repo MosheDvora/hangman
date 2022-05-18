@@ -70,13 +70,18 @@ import random
 # word_to_guess = input("Please enter a word: ")
 # print("_ " * word_to_guess.__len__())
 
-char_guess = input("Please enter charter\n").lower()
 
-if (not char_guess.isalpha()) and (len(char_guess) > 1):
-      print("E3")
-elif not char_guess.isalpha():
-      print("E2")
-elif len(char_guess) > 1:
-      print("E1")
-else:
-      print(char_guess)
+def is_valid_input(letter_guessed):
+      if (not letter_guessed.isalpha()) and (len(letter_guessed) > 1):
+            return False
+      elif not letter_guessed.isalpha():
+            return False
+      elif len(letter_guessed) > 1:
+            return False
+      else:
+            return True
+
+
+user_letter_guessed = input("Please enter charter\n").lower()
+print(is_valid_input(user_letter_guessed))
+

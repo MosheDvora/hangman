@@ -1,8 +1,5 @@
-c = 1
+def multiply(a, b):
+    return (a * b)
 
-def foo3():
-  c = c + 1
- print(c)
+multiply(3, 5)
 
-foo3()
-print(c)
