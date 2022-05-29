@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../JupyterExercise/.idea/JupyterExercise.iml" filepath="$PROJECT_DIR$/../JupyterExercise/.idea/JupyterExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hangman.iml" filepath="$PROJECT_DIR$/.idea/hangman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jupyterCourse/.idea/jupyterCourse.iml" filepath="$PROJECT_DIR$/../jupyterCourse/.idea/jupyterCourse.iml" />
     </modules>
   </component>
 </project>

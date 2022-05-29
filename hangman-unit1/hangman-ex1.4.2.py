@@ -1,4 +1,6 @@
 import random
+
+
 # MAX_TRIES = 6
 # HANGMAN_ASCII_ART = """Welcome to the game Hangman\n
 #   _    _
@@ -71,17 +73,30 @@ import random
 # print("_ " * word_to_guess.__len__())
 
 
-def is_valid_input(letter_guessed):
-      if (not letter_guessed.isalpha()) and (len(letter_guessed) > 1):
-            return False
-      elif not letter_guessed.isalpha():
-            return False
-      elif len(letter_guessed) > 1:
-            return False
+
+def check_valid_input(letter_guessed, old_letters_guessed):
+      if (letter_guessed.isalpha()) \
+            and (len(letter_guessed) == 1) \
+            and (letter_guessed not in old_letters_guessed):
+        return True
       else:
+        return False
+
+def try_update_letter_guessed(letter_guessed, old_letters_guessed):
+        letter_guessed = letter_guessed.lower()
+        if check_valid_input(letter_guessed, old_letters_guessed):
+            old_letters_guessed.append(letter_guessed)
+            old_letters_guessed = sorted(old_letters_guessed)
             return True
+        else:
+            print("X")
+            print(" -> ".join(old_letters_guessed))
+            return False
 
 
-user_letter_guessed = input("Please enter charter\n").lower()
-print(is_valid_input(user_letter_guessed))
+old_letters = ['a', 'b', 'c']
+try_update_letter_guessed("B", old_letters)
+# user_letter_guessed = input("Please enter charter\n").lower()
+# print(check_valid_input(user_letter_guessed, old_letters))
+
 
